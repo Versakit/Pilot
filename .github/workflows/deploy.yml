@@ -74,3 +74,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub Token 进行身份验证
           branch: gh-pages # 部署到 `gh-pages` 分支
           folder: docs/.vitepress/dist # 指定要部署的文件夹路径
+
+      # 显示部署链接
+      - name: Display deployment link
+        run: |
+          echo "🚀 文档已成功部署！"
+          echo "📝 访问链接: https://${{ github.repository_owner }}.github.io/Pilot/"
