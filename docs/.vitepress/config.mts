@@ -11,7 +11,7 @@ import { getHead } from './config/getHead'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/Versakit/',
+  base: '/Pilot/',
   title: 'Versakit',
   description: 'A VitePress Site',
   head: getHead(),
@@ -42,7 +42,7 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [groupIconVitePlugin()],
+    plugins: [groupIconVitePlugin() as any],
     css: {
       preprocessorOptions: {
         scss: {

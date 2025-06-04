@@ -11,7 +11,7 @@
     "clean": "turbo run clean && rimraf node_modules/.cache",
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
     "pilot:build": "pnpm --filter pilot build",
-    "docs:build": "pnpm --filter run docs:build",
+    "docs:build": "pnpm --filter docs run docs:build",
     "docs:dev": "pnpm --filter docs docs:dev",
     "docs:preview": "turbo run preview --filter=docs",
     "test:ui": "vitest --ui",

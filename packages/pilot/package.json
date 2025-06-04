@@ -2,6 +2,7 @@
   "name": "pilot",
   "version": "1.0.0",
   "description": "Vue 3指令集合",
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
