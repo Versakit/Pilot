@@ -1,5 +1,5 @@
 {
-  "name": "Pilot-monorepo",
+  "name": "pilot-monorepo",
   "version": "0.2.2",
   "private": "true",
   "type": "module",
@@ -23,9 +23,9 @@
     "test:ui": "vitest --ui",
     "preinstall": "node ./scripts/preinstall.js",
     "lint:fix": "turbo run lint:fix",
-    "lint:eslint": "eslint packages/**/*.{ts,vue} --cache --fix",
+    "lint:eslint": "npx eslint packages/**/*.{ts,vue} --cache --fix",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
+    "lint-staged": "npx lint-staged",
     "commit": "git-cz",
     "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "changeset": "changeset",
@@ -39,9 +39,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+      "npx eslint --fix",
+      "prettier --write"
     ],
     "*.{scss,less,styl,html}": [
       "prettier --write"
@@ -56,6 +55,7 @@
     "@changesets/cli": "^2.28.1",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.28.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.9.0",
     "@types/postcss-pxtorem": "^6.1.0",
