@@ -26,7 +26,7 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 8.15.3
           run_install: false
 
       - name: Get pnpm store directory
@@ -43,8 +43,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Clean install
+        run: |
+          rm -rf node_modules
+          rm -rf packages/*/node_modules
+          pnpm install --force
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

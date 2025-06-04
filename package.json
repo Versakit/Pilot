@@ -19,7 +19,7 @@
     "lint:fix": "turbo run lint:fix",
     "lint:eslint": "npx eslint packages/**/*.{ts,vue} --cache --fix",
     "prepare": "husky install",
-    "lint-staged": "npx lint-staged",
+    "lint-staged": "lint-staged",
     "commit": "git-cz",
     "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "changeset": "changeset",
@@ -33,7 +33,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": [
-      "npx eslint --fix",
+      "eslint --fix",
       "prettier --write"
     ],
     "*.{scss,less,styl,html}": [

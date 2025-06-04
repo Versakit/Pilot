@@ -25,28 +25,46 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 设置 pnpm 包管理器，并指定版本为 9
+      # 设置 pnpm 包管理器，并指定版本为 8.15.3
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 9
+          version: 8.15.3
 
-      # 设置 Node.js 环境，并指定版本为 20
+      # 设置 Node.js 环境，并指定版本为 18
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 安装项目依赖
-      - name: Install dependencies
-        run: pnpm i
+      # 获取 pnpm store 目录
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      # 构建 UI
-      - name: Build UI
-        run: pnpm run ui-devops:build
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # 清理安装
+      - name: Clean install
+        run: |
+          rm -rf node_modules
+          rm -rf packages/*/node_modules
+          pnpm install --force
+
+      # 构建 pilot
+      - name: Build pilot
+        run: pnpm run pilot:build
 
       # 使用 VitePress 构建文档
-      - name: Build project
+      - name: Build docs
         run: pnpm run docs:build
 
       # 将构建后的文档部署到 GitHub Pages
