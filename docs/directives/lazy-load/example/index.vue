@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { VKPanel } from '@versakit/ui'
-
 const images = [
   'https://picsum.photos/400/300?random=1',
   'https://picsum.photos/400/300?random=2',
@@ -19,7 +17,7 @@ const images = [
   <div class="lazy-load-demo">
     <h3>基本用法</h3>
     <div class="demo-row">
-      <VKPanel>
+      <div>
         <div class="image-container">
           <img
             v-for="(src, index) in images"
@@ -34,7 +32,7 @@ const images = [
             :alt="`Image ${index + 1}`"
           />
         </div>
-      </VKPanel>
+      </div>
     </div>
   </div>
 </template>
