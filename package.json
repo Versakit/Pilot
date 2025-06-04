@@ -8,18 +8,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "pnpm --filter devplay dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
     "clean": "turbo run clean && rimraf node_modules/.cache",
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
-    "docs:build": "pnpm --filter docs docs:build",
+    "pilot:build": "pnpm --filter pilot build",
+    "docs:build": "turbo run docs:build",
     "docs:dev": "pnpm --filter docs docs:dev",
     "docs:preview": "turbo run preview --filter=docs",
-    "ui:build": "turbo run build --filter=@versakit/ui",
-    "ui-devops:build": "pnpm --filter ui build",
-    "resolvers:build": "turbo run build --filter=resolvers",
     "test:ui": "vitest --ui",
     "preinstall": "node ./scripts/preinstall.js",
     "lint:fix": "turbo run lint:fix",
@@ -57,7 +51,7 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.28.0",
     "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.15.29",
     "@types/postcss-pxtorem": "^6.1.0",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
@@ -88,9 +82,9 @@
     "turbo": "^2.5.0",
     "typescript": "~5.6.3",
     "unplugin-vue-macros": "^2.14.2",
-    "vite": "^6.0.11",
+    "vite": "^6.3.5",
     "vite-plugin-dts": "^4.3.0",
-    "vitest": "^2.1.5",
+    "vitest": "^2.1.9",
     "vue-tsc": "^2.2.2"
   }
 }

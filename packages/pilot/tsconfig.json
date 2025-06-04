@@ -10,7 +10,8 @@
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["node", "vite/client", "vitest/globals"]
   },
   "include": ["index.ts", "src/**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
