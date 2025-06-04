@@ -27,7 +27,9 @@ export default defineConfig([
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        declaration: false,
+        declaration: true,
+        declarationDir: './dist',
+        sourceMap: true,
       }),
       terser(),
     ],
