@@ -31,7 +31,7 @@ export default defineConfig({
       '/directives/': getDirectives(),
     } as any,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lenran659/Pilot' },
+      { icon: 'github', link: 'https://github.com/Versakit/Pilot' },
       { icon: 'npm', link: 'https://www.npmjs.com/package/pilot' },
     ],
     footer: {
