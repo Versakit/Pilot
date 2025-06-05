@@ -12,26 +12,141 @@
         <div class="hero-content">
           <div class="logo-section">
             <svg
-              class="rocket-logo"
-              viewBox="0 0 64 64"
+              class="astronaut-logo"
+              viewBox="0 0 512 512"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M32 2C23 12 18 22 16 32C22 30 29 30 32 30C35 30 42 30 48 32C46 22 41 12 32 2Z"
-                fill="#0066cc"
-              />
-              <path
-                d="M32 38C28 38 24 39 20 40L24 56C24 58 28 58 32 58C36 58 40 58 40 56L44 40C40 39 36 38 32 38Z"
-                fill="#0052a3"
-              />
-              <path
-                d="M22 34C19 34 16 36 16 40C12 42 10 46 10 52C14 50 18 48 22 46C22 42 22 38 22 34Z"
-                fill="#0066cc"
-              />
-              <path
-                d="M42 34C45 34 48 36 48 40C52 42 54 46 54 52C50 50 46 48 42 46C42 42 42 38 42 34Z"
-                fill="#0066cc"
-              />
+              <!-- 背景圆 -->
+              <circle cx="256" cy="256" r="250" fill="#0a192f" />
+
+              <!-- 小装饰星星 -->
+              <g fill="#495FA9" opacity="0.6">
+                <circle cx="120" cy="100" r="4" />
+                <circle cx="420" cy="150" r="5" />
+                <circle cx="380" cy="80" r="3" />
+                <circle cx="150" cy="410" r="4" />
+                <circle cx="390" cy="360" r="5" />
+                <circle cx="450" cy="250" r="4" />
+                <circle cx="100" cy="350" r="3" />
+                <circle cx="290" cy="40" r="5" />
+                <circle cx="460" cy="320" r="4" />
+                <circle cx="80" cy="220" r="5" />
+              </g>
+
+              <!-- 宇航员 -->
+              <g
+                transform="translate(256, 256) scale(0.8) translate(-256, -256)"
+              >
+                <!-- 宇航员头盔 -->
+                <circle cx="256" cy="200" r="100" fill="#495FA9" />
+
+                <!-- 面罩 -->
+                <circle
+                  cx="256"
+                  cy="190"
+                  r="80"
+                  fill="#0a192f"
+                  stroke="#495FA9"
+                  stroke-width="2"
+                />
+                <path
+                  d="M210 170 Q 256 140 302 170 Q 320 200 302 230 Q 256 260 210 230 Q 192 200 210 170"
+                  fill="#495FA9"
+                  opacity="0.3"
+                />
+
+                <!-- 宇航服主体 -->
+                <path
+                  d="M170 260 L 170 400 Q 200 430 256 430 Q 312 430 342 400 L 342 260"
+                  fill="#495FA9"
+                />
+
+                <!-- 胸前标识 -->
+                <circle cx="256" cy="300" r="22" fill="#0a192f" />
+                <path
+                  d="M240 298 Q 256 286 272 298 Q 256 310 240 298"
+                  fill="#fff"
+                />
+                <ellipse
+                  cx="256"
+                  cy="298"
+                  rx="16"
+                  ry="7"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                />
+
+                <!-- 手臂 -->
+                <path
+                  d="M170 300 Q 140 340 120 400"
+                  stroke="#495FA9"
+                  stroke-width="40"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M342 300 Q 372 340 392 400"
+                  stroke="#495FA9"
+                  stroke-width="40"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+
+                <!-- 手套 -->
+                <circle
+                  cx="120"
+                  cy="400"
+                  r="22"
+                  fill="#0a192f"
+                  stroke="#495FA9"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="392"
+                  cy="400"
+                  r="22"
+                  fill="#0a192f"
+                  stroke="#495FA9"
+                  stroke-width="2"
+                />
+
+                <!-- 腿部 -->
+                <path
+                  d="M210 430 Q 200 470 195 500"
+                  stroke="#495FA9"
+                  stroke-width="40"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M302 430 Q 312 470 317 500"
+                  stroke="#495FA9"
+                  stroke-width="40"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+
+                <!-- 靴子 -->
+                <ellipse
+                  cx="195"
+                  cy="500"
+                  rx="22"
+                  ry="15"
+                  fill="#0a192f"
+                  stroke="#495FA9"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="317"
+                  cy="500"
+                  rx="22"
+                  ry="15"
+                  fill="#0a192f"
+                  stroke="#495FA9"
+                  stroke-width="2"
+                />
+              </g>
             </svg>
           </div>
           <div class="title-section">
@@ -312,22 +427,31 @@ const features = [
 }
 
 .logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
-.rocket-logo {
-  width: 120px;
-  height: 120px;
-  animation: rocket-float 6s ease-in-out infinite;
+.astronaut-logo {
+  width: 180px;
+  height: 180px;
+  animation: astronaut-float 8s ease-in-out infinite;
 }
 
-@keyframes rocket-float {
+@keyframes astronaut-float {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(3deg);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-15px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(1deg);
   }
 }
 
@@ -336,7 +460,8 @@ const features = [
 }
 
 .main-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  display: block;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 0 2px 10px rgba(0, 119, 182, 0.5);
