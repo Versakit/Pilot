@@ -6,6 +6,7 @@
 }
 .container{
   padding: 0!important;
+  margin: 0;
 }
 .VPDoc.has-aside .container:has(.theme-main-page) {
   display: none;
