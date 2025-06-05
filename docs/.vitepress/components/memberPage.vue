@@ -13,7 +13,7 @@
       <VPTeamPageTitle class="member-title">
         <template #title>贡献者</template>
         <template #lead>
-          感谢每一位贡献者的支持与贡献！你们的每一次提交，都是推动 Versakit UI
+          感谢每一位贡献者的支持与贡献！你们的每一次提交，都是推动 Pilot
           进步的动力 💖
         </template>
       </VPTeamPageTitle>

@@ -6,8 +6,19 @@ export const getHead = (): HeadConfig[] => {
       'link',
       {
         rel: 'icon',
-        href: '/Versakit/image/logo.svg',
+        href: '/Pilot/image/logo.svg',
       },
+    ],
+    ['meta', { name: 'theme-color', content: '#0066cc' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
+    ['meta', { name: 'msapplication-TileColor', content: '#0066cc' }],
+    [
+      'meta',
+      { name: 'keywords', content: 'Vue3, 指令库, Pilot, Vue Directives' },
     ],
   ]
 }

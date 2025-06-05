@@ -1,654 +1,576 @@
 <template>
   <div class="theme-main-page">
-    <div class="background-box">
-      <template v-for="img in images" :key="img.src">
-        <img :src="img.src" :class="img.class" :alt="img.alt" />
-      </template>
-      <div class="component-library">
-        <img src="/image/white.svg" class="white-img" alt="白色小点" />
-        <div class="component">
-          <div class="title">Versakit</div>
-          <div class="title-sub">
-            <div class="description">We create designs</div>
-            <div class="description">
-              everyone
-              <span class="span-word">loves.</span>
-            </div>
+    <div class="hero-section">
+      <div class="stars-background"></div>
+      <div class="space-objects">
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+        <div class="shooting-star shooting-star-1"></div>
+        <div class="shooting-star shooting-star-2"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="logo-section">
+            <svg
+              class="rocket-logo"
+              viewBox="0 0 64 64"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 2C23 12 18 22 16 32C22 30 29 30 32 30C35 30 42 30 48 32C46 22 41 12 32 2Z"
+                fill="#0066cc"
+              />
+              <path
+                d="M32 38C28 38 24 39 20 40L24 56C24 58 28 58 32 58C36 58 40 58 40 56L44 40C40 39 36 38 32 38Z"
+                fill="#0052a3"
+              />
+              <path
+                d="M22 34C19 34 16 36 16 40C12 42 10 46 10 52C14 50 18 48 22 46C22 42 22 38 22 34Z"
+                fill="#0066cc"
+              />
+              <path
+                d="M42 34C45 34 48 36 48 40C52 42 54 46 54 52C50 50 46 48 42 46C42 42 42 38 42 34Z"
+                fill="#0066cc"
+              />
+            </svg>
+          </div>
+          <div class="title-section">
+            <h1 class="main-title">Pilot</h1>
+            <p class="subtitle">探索未知,引领创新的指令库</p>
           </div>
 
-          <div class="start-box">
-            <button @click="navigate('/Versakit/guide/versakit/')">开始</button>
-            <div class="btn-shine">V 0.3.8</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <img src="/image/dot5.svg" class="dot-img" alt="装饰" />
-  <main class="main">
-    <div class="main-content">
-      <div class="inner-content">
-        <div class="center-title">VersakitVue</div>
-        <div class="sur-title">基于 Vue 3，面向设计师和开发者的组件库</div>
-        <div class="center-components">
-          <div class="center-component" v-for="item in list" :key="item.name">
-            <div class="component-top">
-              <div class="purple-box">
-                <img
-                  src="/image/purple.svg"
-                  class="purple-img"
-                  alt="紫色背景"
+          <div class="cta-section">
+            <button
+              @click="navigate('/Pilot/guide/versakit/')"
+              class="start-button"
+            >
+              开始探索
+              <svg
+                class="start-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
                 />
-              </div>
-              <ver-icon
-                class="component-top-icon"
-                :name="item.name"
-                size="25"
-              />
-              <div class="component-top-content">
-                {{ item.content }}
-              </div>
-            </div>
-            <div class="component-bottom" @click="navigate(item.link)">
-              <div class="component-bottom-word">{{ item.word }}</div>
-              <ver-icon
-                class="component-bottom-icon"
-                name="arrow-right-circle-fill"
-                size="16"
-              />
-            </div>
+              </svg>
+            </button>
+            <div class="version-badge">V 0.3.10</div>
           </div>
         </div>
       </div>
     </div>
-  </main>
-</template>
-<script setup>
-import { ref } from 'vue'
 
-const showBanner = ref(true)
+    <main class="main-content">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Pilot</h2>
+          <p class="section-description">基于 Vue3的指令库</p>
+        </div>
+
+        <div class="feature-grid">
+          <div
+            class="feature-card"
+            v-for="item in features"
+            :key="item.name"
+            @click="navigate(item.link)"
+          >
+            <div class="feature-icon-wrapper">
+              <svg
+                class="feature-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                v-html="item.svg"
+              ></svg>
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title">{{ item.title }}</h3>
+              <p class="feature-description">{{ item.description }}</p>
+            </div>
+            <div class="feature-footer">
+              <span>{{ item.btnText }}</span>
+              <svg
+                class="arrow-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script setup>
 const navigate = (path) => {
   window.location.href = path
 }
 
-// 需要加上 config.mts 的 base 前缀， template 中的路径 Vite 会自动加上 base
-const images = ref([
-  { src: '/Versakit/image/dot1.svg', class: 'decor decor1', alt: '装饰1' },
-  { src: '/Versakit/image/dot2.svg', class: 'decor decor2', alt: '装饰2' },
-  { src: '/Versakit/image/dot3.svg', class: 'decor decor3', alt: '装饰3' },
-  { src: '/Versakit/image/dot4.svg', class: 'decor decor4', alt: '装饰4' },
-  { src: '/Versakit/image/person1.svg', class: 'person person1', alt: '人物1' },
-  { src: '/Versakit/image/person2.svg', class: 'person person2', alt: '人物2' },
-  { src: '/Versakit/image/person3.svg', class: 'person person3', alt: '人物3' },
-])
+// 特性卡片数据
+const features = [
+  {
+    name: 'directives',
+    title: '核心指令',
+    description: '精心打造的Vue3指令，助您快速构建交互丰富的用户界面',
+    link: '/Pilot/directives/ripple/',
+    btnText: '浏览指令',
+    svg: `<path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5z" fill="none" stroke="currentColor" stroke-width="2"></path>
+          <path d="M9 9h6M9 12h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>`,
+  },
+  {
+    name: 'performance',
+    title: '高性能',
+    description: '轻量级设计，零依赖，确保您的应用保持最佳性能',
+    link: '/Pilot/guide/quickstart/',
+    btnText: '性能详情',
+    svg: `<path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>`,
+  },
+  {
+    name: 'customization',
+    title: '易于定制',
+    description: '每个指令都提供丰富的配置选项，满足您的个性化需求',
+    link: '/Pilot/guide/directives/',
+    btnText: '定制指南',
+    svg: `<circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>`,
+  },
+]
 </script>
+
 <style scoped>
-body {
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
   overflow-x: hidden;
 }
 
-.vk-btn {
-  border: none;
-  margin-left: 20px;
-  width: 120px;
-
-  @media (max-width: 768px) {
-    width: 80px;
-    font-size: 14px;
-    height: 35px;
-    margin-left: 10px;
-  }
-
-  @media (max-width: 555px) {
-    width: 40px;
-    padding: 0;
-    height: 20px;
-    font-size: 10px;
-    margin-left: 10px;
-  }
-}
-
-.background-box {
+.theme-main-page {
   width: 100%;
-  background-image: url('/image/bg.png');
-  opacity: 0.9;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  aspect-ratio: 2108 / 1398;
+  overflow-x: hidden;
 }
 
-.component-library {
+.container {
+  width: 100%;
+  /* max-width: 1152px; */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 英雄区域样式 */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #001233 0%, #023e8a 100%);
+  overflow: hidden;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
 }
 
-.white-img {
-  transform: translateY(30%);
-  width: clamp(30px, 15vw, 200px);
-  user-select: none;
-}
-
-.component {
-  transform: translate(10%, 20%);
-}
-
-.background-image {
+/* 星空背景 */
+.stars-background {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: stars 100s linear infinite;
+  opacity: 0.6;
 }
 
-.person {
+@keyframes stars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 200px;
+  }
+}
+
+/* 流星动画 */
+.shooting-star {
   position: absolute;
-  width: clamp(10px, 15vw, 180px);
-  z-index: 1;
-  user-select: none;
+  width: 150px;
+  height: 1px;
+  transform: rotate(-45deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 
-  @media (max-width: 765px) {
-    animation: float-min1 6s infinite ease-in-out;
+.shooting-star-1 {
+  top: 10%;
+  left: 10%;
+  animation: shooting-star 6s linear infinite;
+  animation-delay: 2s;
+}
+
+.shooting-star-2 {
+  top: 15%;
+  right: 20%;
+  animation: shooting-star 8s linear infinite;
+  animation-delay: 5s;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(500px) translateY(500px) rotate(-45deg);
+    opacity: 0;
   }
 }
 
-.person1 {
-  top: 9%;
-  left: 50%;
-  animation: float1 6s infinite ease-in-out;
-
-  @media (min-width: 555px) and (max-width: 765px) {
-    top: 5%;
-  }
-
-  @media (max-width: 555px) {
-    top: 3%;
-  }
-}
-
-.person2 {
-  top: 18%;
-  left: 62%;
-  animation: float2 8s infinite ease-in-out;
-
-  @media (min-width: 555px) and (max-width: 765px) {
-    top: 12%;
-  }
-
-  @media (max-width: 555px) {
-    top: 7%;
-  }
-}
-
-.person3 {
-  width: clamp(10px, 28vw, 450px);
-  top: 27%;
-  left: 60%;
-  animation: float3 7s infinite ease-in-out;
-
-  @media (min-width: 1024px) and (max-width: 1200px) {
-    top: 25%;
-    width: clamp(10px, 20vw, 350px);
-  }
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
-}
-
-.decor {
+/* 行星装饰 */
+.planet {
   position: absolute;
-  width: clamp(30px, 100vw, 400px);
-  animation: float2 5s infinite ease-in-out;
-  z-index: 1;
-  max-width: 100%;
-  overflow: hidden;
-  user-select: none;
-
-  @media (max-width: 1024px) {
-    width: clamp(30px, 80vw, 300px);
-  }
-
-  @media (max-width: 765px) {
-    animation: float-min2 5s infinite ease-in-out;
-  }
+  border-radius: 50%;
 }
 
-.decor1 {
-  top: 3%;
-  left: 48%;
-
-  @media (min-width: 555px) and (max-width: 765px) {
-    width: clamp(30px, 50vw, 300px);
-    top: 2%;
-  }
-
-  @media (max-width: 555px) {
-    width: clamp(30px, 50vw, 300px);
-    top: 1%;
-  }
+.planet-1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #0077b6, #023e8a);
+  top: 15%;
+  right: 15%;
+  box-shadow: 0 0 20px rgba(0, 119, 182, 0.6);
+  animation: planet-float 15s ease-in-out infinite;
 }
 
-.decor2 {
-  top: 12%;
-  left: 62%;
-  width: clamp(30px, 30vw, 340px);
-
-  @media (max-width: 765px) {
-    display: none;
-  }
+.planet-2 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #48cae4, #0096c7);
+  bottom: 20%;
+  left: 10%;
+  box-shadow: 0 0 15px rgba(0, 150, 199, 0.6);
+  animation: planet-float 20s ease-in-out infinite reverse;
 }
 
-.decor3 {
-  top: 28%;
-  left: 62%;
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
-}
-
-.decor4 {
-  top: 22%;
-  left: 64%;
-  width: clamp(30px, 80vw, 340px);
-
-  @media (min-width: 1024px) and (max-width: 1200px) {
-    width: clamp(10px, 70vw, 200px);
-  }
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
-}
-
-@keyframes float1 {
+@keyframes planet-float {
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-20px);
   }
 }
 
-@keyframes float2 {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+/* 内容区域 */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
 }
 
-@keyframes float3 {
-  0%,
-  100% {
-    transform: translateY(20px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
+.logo-section {
+  margin-bottom: 2rem;
 }
 
-@keyframes float-min1 {
+.rocket-logo {
+  width: 120px;
+  height: 120px;
+  animation: rocket-float 6s ease-in-out infinite;
+}
+
+@keyframes rocket-float {
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
   }
 }
 
-@keyframes float-min2 {
-  0%,
-  100% {
-    transform: translateX(5px);
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateX(0px);
-    transform: translateY(0px);
-  }
+.title-section {
+  margin-bottom: 3rem;
 }
 
-@keyframes float2 {
-  0%,
-  100% {
-    transform: translateX(20px);
-    transform: translateY(-10px);
-  }
-
-  50% {
-    transform: translateX(0px);
-    transform: translateY(0px);
-  }
-}
-
-.title {
-  color: #8b5cf6;
-  font-size: clamp(1rem, 5vw, 4.5rem);
-  font-weight: 600;
-  padding: 20px;
-  margin-bottom: 30px;
-  user-select: none;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-    margin-bottom: 5px;
-  }
-
-  @media (max-width: 555px) {
-    height: 30px;
-  }
-}
-
-.title-sub {
-  margin-bottom: 30px;
-  user-select: none;
-
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-  }
-}
-
-.description {
-  color: #fff;
-  font-size: clamp(0.5rem, 2.5vw, 2rem);
-  padding: 5px;
-  padding-left: 20px;
-
-  @media (max-width: 768px) {
-    padding: 0;
-    padding-left: 10px;
-  }
-
-  @media (max-width: 555px) {
-    height: 16px;
-  }
-}
-
-.span-word {
-  color: #8b5cf6;
-  font-weight: 600;
-}
-
-.dot-img {
-  width: clamp(30px, 100vw, 800px);
-  transform: translate(10%, -200%);
-  user-select: none;
-
-  @media (max-width: 1024px) {
-    width: clamp(30px, 80vw, 600px);
-  }
-}
-
-.main {
-  display: flex;
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 24px;
-
-  @media (min-width: 960px) {
-    padding: 40px 64px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 40px 48px;
-  }
-}
-
-.main-content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.inner-content {
-  width: 100%;
-  text-align: center;
-}
-
-.center-title {
-  color: #434343;
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  font-weight: 600;
-  padding: 20px;
-  user-select: none;
-}
-
-.dark .center-title {
-  color: #f5f5f5;
-}
-
-.sur-title {
-  color: #595959;
-  padding: 20px;
-  user-select: none;
-}
-
-.dark .sur-title {
-  color: #8c8c8c;
-}
-
-.center-components {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 50px 0;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-.center-component {
-  position: relative;
-  border-radius: 15px;
-  height: 400px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: transform 0.3s ease;
-}
-
-.center-component:hover {
-  transform: translateY(-10px);
-}
-
-.component-top {
-  padding: 50px 30px;
-}
-
-.purple-box {
-  display: flex;
-  justify-content: center;
-  transform: translate(6px, 20px);
-}
-
-.purple-img {
-  text-align: center;
-}
-
-.component-top-icon {
-  transform: translateY(-45px);
-}
-
-.component-top-content {
-  user-select: none;
-  padding: 20px;
-  font-size: 14px;
-}
-
-.component-bottom {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #8b5cf6;
-  color: #fff;
-  padding: 10px 0;
-  border-radius: 0 0 15px 15px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.component-bottom-word {
-  margin-right: 10px;
-}
-
-.component-bottom-icon {
-  transition: transform 0.5s ease;
-}
-
-.component-bottom:hover .component-bottom-icon {
-  transform: translateX(5px);
-}
-
-/* 版本号 */
-.start-box {
-  align-items: center;
-  display: flex;
-  gap: 5%;
-  position: relative;
-}
-
-/* From Uiverse.io by neerajbaniwal */
-.btn-shine {
-  position: absolute;
-  top: 50%;
-  margin-left: 10px;
-  left: 62%;
-  transform: translate(-50%, -50%);
-  padding: 12px 48px;
-  color: #fff;
-  /* background: linear-gradient(to right, #e4e4e4 0, #6a6a6a 10%, #b9b9b9 20%); */
-  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%);
-  background-position: 0;
+.main-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 119, 182, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #90e0ef 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(0, 119, 182, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 119, 182, 1);
+  }
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 300;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA 区域 */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  color: white;
   font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  white-space: nowrap;
-  font-family: 'Poppins', sans-serif;
-
-  @media (max-width: 1256px) {
-    left: 76%;
-    margin-left: 20px;
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 1024px) {
-    left: 86%;
-    margin-left: 20px;
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 768px) {
-    left: 86%;
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 555px) {
-    font-size: 0.6rem;
-    margin-left: 5px;
-  }
-}
-
-@-moz-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-
-  60% {
-    background-position: 180px;
-  }
-
-  100% {
-    background-position: 180px;
-  }
-}
-
-@-webkit-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-
-  60% {
-    background-position: 180px;
-  }
-
-  100% {
-    background-position: 180px;
-  }
-}
-
-@-o-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-
-  60% {
-    background-position: 180px;
-  }
-
-  100% {
-    background-position: 180px;
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0;
-  }
-
-  60% {
-    background-position: 180px;
-  }
-
-  100% {
-    background-position: 180px;
-  }
-}
-
-.banner {
-  background-color: #8b5cf6;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  user-select: none;
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background: none;
   border: none;
-  color: #fff;
+  border-radius: 2rem;
   font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 119, 182, 0.5);
+}
+
+.start-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.7);
+}
+
+.start-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.version-badge {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: badge-pulse 3s infinite linear;
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 主内容区域 */
+.main-content {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.dark .main-content {
+  background-color: #0a192f;
+  color: #e6f1ff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+.dark .section-title {
+  color: #64ffda;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #495057;
+}
+
+.dark .section-description {
+  color: #8892b0;
+}
+
+/* 特性卡片 */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
-.close-btn:hover {
-  color: #ccc;
+.dark .feature-card {
+  background: #112240;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.2);
+}
+
+.feature-icon-wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #caf0f8 0%, #90e0ef 100%);
+}
+
+.dark .feature-icon-wrapper {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+}
+
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #0077b6;
+}
+
+.dark .feature-icon {
+  color: #64ffda;
+}
+
+.feature-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+}
+
+.dark .feature-title {
+  color: #64ffda;
+}
+
+.feature-description {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.dark .feature-description {
+  color: #8892b0;
+}
+
+.feature-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e9ecef;
+  color: #0077b6;
+  font-weight: 500;
+}
+
+.dark .feature-footer {
+  border-top: 1px solid #1b263b;
+  color: #64ffda;
+}
+
+.arrow-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

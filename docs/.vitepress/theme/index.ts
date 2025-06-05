@@ -1,15 +1,11 @@
 import Theme from 'vitepress/theme'
-
-// 引入样式
-import './index.scss'
 import 'virtual:group-icons.css'
-
-// 引入组件库
-import { VersakitDirectives } from 'pilot'
+import { Pilot } from 'pilot'
+import './index.css'
 
 export default {
   ...Theme,
   enhanceApp({ app }) {
-    app.use(VersakitDirectives)
+    app.use(Pilot)
   },
 }

@@ -11,7 +11,7 @@ import { vTypewriter } from './src/typewriter'
 import { vResize } from './src/resize'
 import { vDesensitize } from './src/desensitize'
 
-const VersakitDirectives = {
+const Pilot = {
   install(app: App) {
     app.directive('drag', vDrag)
     app.directive('lazy-load', vLazyLoad)
@@ -27,4 +27,4 @@ const VersakitDirectives = {
   },
 }
 
-export { VersakitDirectives }
+export { Pilot }
