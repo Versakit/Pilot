@@ -24,7 +24,7 @@ const handleImmediateInput = (e: Event) => {
       <div class="demo-col">
         <input
           v-model="inputValue"
-          v-debounce="{ delay: 500 }"
+          v-pilot-debounce="{ delay: 500 }"
           @input="handleInput"
           placeholder="输入内容，500ms后更新"
         />
@@ -40,7 +40,7 @@ const handleImmediateInput = (e: Event) => {
       <div class="demo-col">
         <input
           v-model="immediateValue"
-          v-debounce="{ delay: 500, immediate: true }"
+          v-pilot-debounce="{ delay: 500, immediate: true }"
           @input="handleImmediateInput"
           placeholder="输入内容，立即执行一次，之后500ms更新"
         />

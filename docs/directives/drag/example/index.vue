@@ -7,14 +7,14 @@
     <h3>基本用法</h3>
     <div class="demo-row">
       <div class="drag-container">
-        <div v-drag class="draggable">自由拖拽</div>
+        <div v-pilot-drag class="draggable">自由拖拽</div>
       </div>
     </div>
 
     <h3>限制方向</h3>
     <div class="demo-row">
       <div class="drag-container">
-        <div v-drag="{ axis: 'x' }" class="draggable">只能水平拖拽</div>
+        <div v-pilot-drag="{ axis: 'x' }" class="draggable">只能水平拖拽</div>
       </div>
     </div>
 
@@ -22,7 +22,9 @@
     <div class="demo-row">
       <div class="drag-container">
         <div
-          v-drag="{ boundary: { left: 0, right: 300, top: 0, bottom: 100 } }"
+          v-pilot-drag="{
+            boundary: { left: 0, right: 300, top: 0, bottom: 100 },
+          }"
           class="draggable"
         >
           限制在容器内拖拽

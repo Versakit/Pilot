@@ -16,7 +16,7 @@ export default defineConfig({
   description: '探索未知，引领创新的 Vue3 指令库',
   head: getHead(),
   themeConfig: {
-    logo: '/image/logo.svg',
+    logo: '/favicon.svg',
     search: {
       provider: 'algolia',
       options: {

@@ -22,7 +22,7 @@ const images = [
           <img
             v-for="(src, index) in images"
             :key="index"
-            v-lazy-load="{
+            v-pilot-lazy-load="{
               loading: 'https://via.placeholder.com/400x300?text=Loading...',
               error: 'https://via.placeholder.com/400x300?text=Error',
               rootMargin: '50px',

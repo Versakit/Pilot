@@ -12,15 +12,15 @@ import { vResize } from './resize'
 
 export default {
   install(app: App) {
-    app.directive('drag', vDrag)
-    app.directive('lazy-load', vLazyLoad)
-    app.directive('throttle', vThrottle)
-    app.directive('debounce', vDebounce)
-    app.directive('ripple', vRipple)
-    app.directive('increase', vIncrease)
-    app.directive('copy', vCopy)
-    app.directive('long-press', vLongPress)
-    app.directive('typewriter', vTypewriter)
-    app.directive('resize', vResize)
+    app.directive('pilot-drag', vDrag)
+    app.directive('pilot-lazy-load', vLazyLoad)
+    app.directive('pilot-throttle', vThrottle)
+    app.directive('pilot-debounce', vDebounce)
+    app.directive('pilot-ripple', vRipple)
+    app.directive('pilot-increase', vIncrease)
+    app.directive('pilot-copy', vCopy)
+    app.directive('pilot-long-press', vLongPress)
+    app.directive('pilot-typewriter', vTypewriter)
+    app.directive('pilot-resize', vResize)
   },
 }

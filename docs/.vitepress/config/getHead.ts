@@ -6,7 +6,7 @@ export const getHead = (): HeadConfig[] => {
       'link',
       {
         rel: 'icon',
-        href: '/Pilot/image/logo.svg',
+        href: '/Pilot/favicon.svg',
       },
     ],
     ['meta', { name: 'theme-color', content: '#0066cc' }],
