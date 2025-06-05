@@ -24,7 +24,7 @@ const handleImmediateInput = (e: Event) => {
       <div class="demo-col">
         <input
           v-model="inputValue"
-          v-throttle="{ delay: 500 }"
+          v-pilot-throttle="{ delay: 500 }"
           @input="handleInput"
           placeholder="输入内容，每500ms最多执行一次"
         />
@@ -40,7 +40,7 @@ const handleImmediateInput = (e: Event) => {
       <div class="demo-col">
         <input
           v-model="immediateValue"
-          v-throttle="{ delay: 500, immediate: true }"
+          v-pilot-throttle="{ delay: 500, immediate: true }"
           @input="handleImmediateInput"
           placeholder="输入内容，立即执行一次，之后每500ms最多执行一次"
         />

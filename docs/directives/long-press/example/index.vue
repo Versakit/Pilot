@@ -8,7 +8,10 @@ const handleLongPress = () => {
   <div class="long-press-demo">
     <h3>基本用法</h3>
     <div class="demo-row">
-      <div v-long-press="{ callback: handleLongPress }" class="long-press-item">
+      <div
+        v-pilot-long-press="{ callback: handleLongPress }"
+        class="long-press-item"
+      >
         长按触发回调
       </div>
     </div>
@@ -16,7 +19,7 @@ const handleLongPress = () => {
     <h3>自定义时长</h3>
     <div class="demo-row">
       <div
-        v-long-press="{ duration: 1000, callback: handleLongPress }"
+        v-pilot-long-press="{ duration: 1000, callback: handleLongPress }"
         class="long-press-item"
       >
         长按1秒触发

@@ -9,7 +9,7 @@ const handleResize = (width: number, height: number) => {
     <h3>基本用法</h3>
     <div class="demo-row">
       <div
-        v-resize="{
+        v-pilot-resize="{
           minWidth: 100,
           minHeight: 100,
           onResize: handleResize,
@@ -23,7 +23,7 @@ const handleResize = (width: number, height: number) => {
     <h3>限制最大尺寸</h3>
     <div class="demo-row">
       <div
-        v-resize="{
+        v-pilot-resize="{
           minWidth: 100,
           minHeight: 100,
           maxWidth: 300,
@@ -39,7 +39,7 @@ const handleResize = (width: number, height: number) => {
     <h3>多方向调整</h3>
     <div class="demo-row">
       <div
-        v-resize="{
+        v-pilot-resize="{
           minWidth: 100,
           minHeight: 100,
           handles: ['n', 's', 'e', 'w', 'ne', 'nw', 'se', 'sw'],

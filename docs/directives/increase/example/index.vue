@@ -15,19 +15,19 @@ const numbers = ref({
     <div class="demo-content">
       <div class="demo-item">
         <div class="label">小数值</div>
-        <div class="number" v-increase="numbers.small">0</div>
+        <div class="number" v-pilot-increase="numbers.small">0</div>
       </div>
       <div class="demo-item">
         <div class="label">中数值</div>
-        <div class="number" v-increase="numbers.medium">0</div>
+        <div class="number" v-pilot-increase="numbers.medium">0</div>
       </div>
       <div class="demo-item">
         <div class="label">大数值</div>
-        <div class="number" v-increase="numbers.large">0</div>
+        <div class="number" v-pilot-increase="numbers.large">0</div>
       </div>
       <div class="demo-item">
         <div class="label">超大数值</div>
-        <div class="number" v-increase="numbers.huge">0</div>
+        <div class="number" v-pilot-increase="numbers.huge">0</div>
       </div>
     </div>
   </div>

@@ -12,12 +12,12 @@ const copyError = (err: Error) => {
   <div class="copy-demo">
     <h3>基本用法</h3>
     <div class="demo-row">
-      <div v-copy class="copy-item">点击复制这段文本</div>
+      <div v-pilot-copy class="copy-item">点击复制这段文本</div>
     </div>
 
     <h3>自定义文本</h3>
     <div class="demo-row">
-      <div v-copy="{ text: '这是自定义的复制文本' }" class="copy-item">
+      <div v-pilot-copy="{ text: '这是自定义的复制文本' }" class="copy-item">
         点击复制自定义文本
       </div>
     </div>
@@ -25,7 +25,7 @@ const copyError = (err: Error) => {
     <h3>回调函数</h3>
     <div class="demo-row">
       <div
-        v-copy="{
+        v-pilot-copy="{
           text: '带回调的复制文本',
           success: copySuccess,
           error: copyError,

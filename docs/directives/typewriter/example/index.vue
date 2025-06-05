@@ -9,7 +9,7 @@ const handleComplete = () => {
     <h3>基本用法</h3>
     <div class="demo-row">
       <div
-        v-typewriter="{
+        v-pilot-typewriter="{
           text: '这是一个基本的打字机效果示例',
           speed: 100,
         }"
@@ -20,7 +20,7 @@ const handleComplete = () => {
     <h3>自定义光标</h3>
     <div class="demo-row">
       <div
-        v-typewriter="{
+        v-pilot-typewriter="{
           text: '使用自定义光标字符',
           cursorChar: '_',
           speed: 150,
@@ -32,7 +32,7 @@ const handleComplete = () => {
     <h3>延迟开始</h3>
     <div class="demo-row">
       <div
-        v-typewriter="{
+        v-pilot-typewriter="{
           text: '延迟1秒后开始打字效果',
           delay: 1000,
           onComplete: handleComplete,
@@ -44,7 +44,7 @@ const handleComplete = () => {
     <h3>无光标</h3>
     <div class="demo-row">
       <div
-        v-typewriter="{
+        v-pilot-typewriter="{
           text: '不显示光标的打字效果',
           cursor: false,
         }"
