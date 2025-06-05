@@ -11,11 +11,7 @@
       <div class="container">
         <div class="hero-content">
           <div class="logo-section">
-            <svg
-              class="astronaut-logo"
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg class="astronaut-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
               <!-- 背景圆 -->
               <circle cx="256" cy="256" r="250" fill="#0a192f" />
 
@@ -34,118 +30,42 @@
               </g>
 
               <!-- 宇航员 -->
-              <g
-                transform="translate(256, 256) scale(0.8) translate(-256, -256)"
-              >
+              <g transform="translate(256, 256) scale(0.8) translate(-256, -256)">
                 <!-- 宇航员头盔 -->
                 <circle cx="256" cy="200" r="100" fill="#495FA9" />
 
                 <!-- 面罩 -->
-                <circle
-                  cx="256"
-                  cy="190"
-                  r="80"
-                  fill="#0a192f"
-                  stroke="#495FA9"
-                  stroke-width="2"
-                />
-                <path
-                  d="M210 170 Q 256 140 302 170 Q 320 200 302 230 Q 256 260 210 230 Q 192 200 210 170"
-                  fill="#495FA9"
-                  opacity="0.3"
-                />
+                <circle cx="256" cy="190" r="80" fill="#0a192f" stroke="#495FA9" stroke-width="2" />
+                <path d="M210 170 Q 256 140 302 170 Q 320 200 302 230 Q 256 260 210 230 Q 192 200 210 170"
+                  fill="#495FA9" opacity="0.3" />
 
                 <!-- 宇航服主体 -->
-                <path
-                  d="M170 260 L 170 400 Q 200 430 256 430 Q 312 430 342 400 L 342 260"
-                  fill="#495FA9"
-                />
+                <path d="M170 260 L 170 400 Q 200 430 256 430 Q 312 430 342 400 L 342 260" fill="#495FA9" />
 
                 <!-- 胸前标识 -->
                 <circle cx="256" cy="300" r="22" fill="#0a192f" />
-                <path
-                  d="M240 298 Q 256 286 272 298 Q 256 310 240 298"
-                  fill="#fff"
-                />
-                <ellipse
-                  cx="256"
-                  cy="298"
-                  rx="16"
-                  ry="7"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="1.5"
-                />
+                <path d="M240 298 Q 256 286 272 298 Q 256 310 240 298" fill="#fff" />
+                <ellipse cx="256" cy="298" rx="16" ry="7" fill="none" stroke="#fff" stroke-width="1.5" />
 
                 <!-- 手臂 -->
-                <path
-                  d="M170 300 Q 140 340 120 400"
-                  stroke="#495FA9"
-                  stroke-width="40"
-                  fill="none"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M342 300 Q 372 340 392 400"
-                  stroke="#495FA9"
-                  stroke-width="40"
-                  fill="none"
-                  stroke-linecap="round"
-                />
+                <path d="M170 300 Q 140 340 120 400" stroke="#495FA9" stroke-width="40" fill="none"
+                  stroke-linecap="round" />
+                <path d="M342 300 Q 372 340 392 400" stroke="#495FA9" stroke-width="40" fill="none"
+                  stroke-linecap="round" />
 
                 <!-- 手套 -->
-                <circle
-                  cx="120"
-                  cy="400"
-                  r="22"
-                  fill="#0a192f"
-                  stroke="#495FA9"
-                  stroke-width="2"
-                />
-                <circle
-                  cx="392"
-                  cy="400"
-                  r="22"
-                  fill="#0a192f"
-                  stroke="#495FA9"
-                  stroke-width="2"
-                />
+                <circle cx="120" cy="400" r="22" fill="#0a192f" stroke="#495FA9" stroke-width="2" />
+                <circle cx="392" cy="400" r="22" fill="#0a192f" stroke="#495FA9" stroke-width="2" />
 
                 <!-- 腿部 -->
-                <path
-                  d="M210 430 Q 200 470 195 500"
-                  stroke="#495FA9"
-                  stroke-width="40"
-                  fill="none"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M302 430 Q 312 470 317 500"
-                  stroke="#495FA9"
-                  stroke-width="40"
-                  fill="none"
-                  stroke-linecap="round"
-                />
+                <path d="M210 430 Q 200 470 195 500" stroke="#495FA9" stroke-width="40" fill="none"
+                  stroke-linecap="round" />
+                <path d="M302 430 Q 312 470 317 500" stroke="#495FA9" stroke-width="40" fill="none"
+                  stroke-linecap="round" />
 
                 <!-- 靴子 -->
-                <ellipse
-                  cx="195"
-                  cy="500"
-                  rx="22"
-                  ry="15"
-                  fill="#0a192f"
-                  stroke="#495FA9"
-                  stroke-width="2"
-                />
-                <ellipse
-                  cx="317"
-                  cy="500"
-                  rx="22"
-                  ry="15"
-                  fill="#0a192f"
-                  stroke="#495FA9"
-                  stroke-width="2"
-                />
+                <ellipse cx="195" cy="500" rx="22" ry="15" fill="#0a192f" stroke="#495FA9" stroke-width="2" />
+                <ellipse cx="317" cy="500" rx="22" ry="15" fill="#0a192f" stroke="#495FA9" stroke-width="2" />
               </g>
             </svg>
           </div>
@@ -155,24 +75,11 @@
           </div>
 
           <div class="cta-section">
-            <button
-              @click="navigate('/Pilot/guide/versakit/')"
-              class="start-button"
-            >
+            <button @click="navigate('/Pilot/guide/versakit/')" class="start-button">
               开始探索
-              <svg
-                class="start-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill="none"
-                />
+              <svg class="start-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
               </svg>
             </button>
             <div class="version-badge">V 0.3.10</div>
@@ -189,19 +96,9 @@
         </div>
 
         <div class="feature-grid">
-          <div
-            class="feature-card"
-            v-for="item in features"
-            :key="item.name"
-            @click="navigate(item.link)"
-          >
+          <div class="feature-card" v-for="item in features" :key="item.name" @click="navigate(item.link)">
             <div class="feature-icon-wrapper">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                v-html="item.svg"
-              ></svg>
+              <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" v-html="item.svg"></svg>
             </div>
             <div class="feature-content">
               <h3 class="feature-title">{{ item.title }}</h3>
@@ -209,19 +106,9 @@
             </div>
             <div class="feature-footer">
               <span>{{ item.btnText }}</span>
-              <svg
-                class="arrow-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill="none"
-                />
+              <svg class="arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
               </svg>
             </div>
           </div>
@@ -267,8 +154,12 @@ const features = [
 ]
 </script>
 
-<style scoped>
+<style>
 /* 基础样式重置 */
+.VPDoc .has-aside {
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -331,6 +222,7 @@ const features = [
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 200px 200px;
   }
@@ -342,12 +234,10 @@ const features = [
   width: 150px;
   height: 1px;
   transform: rotate(-45deg);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .shooting-star-1 {
@@ -369,12 +259,15 @@ const features = [
     transform: translateX(0) translateY(0) rotate(-45deg);
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
+
   70% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(500px) translateY(500px) rotate(-45deg);
     opacity: 0;
@@ -408,10 +301,12 @@ const features = [
 }
 
 @keyframes planet-float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -440,16 +335,20 @@ const features = [
 }
 
 @keyframes astronaut-float {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   25% {
     transform: translateY(-10px) rotate(3deg);
   }
+
   50% {
     transform: translateY(-15px) rotate(-2deg);
   }
+
   75% {
     transform: translateY(-5px) rotate(1deg);
   }
@@ -473,10 +372,12 @@ const features = [
 }
 
 @keyframes title-glow {
+
   0%,
   100% {
     text-shadow: 0 0 10px rgba(0, 119, 182, 0.7);
   }
+
   50% {
     text-shadow: 0 0 20px rgba(0, 119, 182, 1);
   }
@@ -537,10 +438,12 @@ const features = [
 }
 
 @keyframes badge-pulse {
+
   0%,
   100% {
     opacity: 0.7;
   }
+
   50% {
     opacity: 1;
   }

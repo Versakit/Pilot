@@ -39,7 +39,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <div></div>
+  <!-- <DefaultTheme.Layout /> -->
 </template>
 
 <style>
@@ -67,7 +68,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   transition: all 1.2s cubic-bezier(0.16, 0.85, 0.25, 1);
 }
 
-.VPDoc.has-aside .container .aside:has(.theme-main-page) {
+.VPDoc.has-aside .container:has(.theme-main-page) {
   display: none;
 }
 
@@ -75,7 +76,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   display: none;
 }
 
-.VPContent#VPContent .VPDoc.has-aside > .container:has(.theme-main-page) {
+.VPContent#VPContent .VPDoc.has-aside>.container:has(.theme-main-page) {
   display: block;
   max-width: 100%;
 }
@@ -116,20 +117,16 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 /* 暗模式对比度 */
 .dark .VPContent {
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 10, 1) 0%,
-    rgba(20, 20, 20, 1) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(10, 10, 10, 1) 0%,
+      rgba(20, 20, 20, 1) 100%);
 }
 
 /* 自定义指令库样式 */
 .vp-doc h1 {
-  background: linear-gradient(
-    90deg,
-    var(--vp-c-brand),
-    var(--vp-c-brand-light)
-  );
+  background: linear-gradient(90deg,
+      var(--vp-c-brand),
+      var(--vp-c-brand-light));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
