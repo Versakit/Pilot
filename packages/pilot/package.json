@@ -42,5 +42,8 @@
     "rollup-plugin-dts": "^6.2.1",
     "typescript": "^5.8.3",
     "vitest": "^2.1.9"
+  },
+  "dependencies": {
+    "pilot": "file:"
   }
 }

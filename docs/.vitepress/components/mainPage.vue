@@ -11,27 +11,14 @@
       <div class="container">
         <div class="hero-content">
           <div class="logo-section">
-            <svg
-              class="rocket-logo"
-              viewBox="0 0 64 64"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 2C23 12 18 22 16 32C22 30 29 30 32 30C35 30 42 30 48 32C46 22 41 12 32 2Z"
-                fill="#0066cc"
-              />
-              <path
-                d="M32 38C28 38 24 39 20 40L24 56C24 58 28 58 32 58C36 58 40 58 40 56L44 40C40 39 36 38 32 38Z"
-                fill="#0052a3"
-              />
-              <path
-                d="M22 34C19 34 16 36 16 40C12 42 10 46 10 52C14 50 18 48 22 46C22 42 22 38 22 34Z"
-                fill="#0066cc"
-              />
-              <path
-                d="M42 34C45 34 48 36 48 40C52 42 54 46 54 52C50 50 46 48 42 46C42 42 42 38 42 34Z"
-                fill="#0066cc"
-              />
+            <svg class="rocket-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 2C23 12 18 22 16 32C22 30 29 30 32 30C35 30 42 30 48 32C46 22 41 12 32 2Z" fill="#0066cc" />
+              <path d="M32 38C28 38 24 39 20 40L24 56C24 58 28 58 32 58C36 58 40 58 40 56L44 40C40 39 36 38 32 38Z"
+                fill="#0052a3" />
+              <path d="M22 34C19 34 16 36 16 40C12 42 10 46 10 52C14 50 18 48 22 46C22 42 22 38 22 34Z"
+                fill="#0066cc" />
+              <path d="M42 34C45 34 48 36 48 40C52 42 54 46 54 52C50 50 46 48 42 46C42 42 42 38 42 34Z"
+                fill="#0066cc" />
             </svg>
           </div>
           <div class="title-section">
@@ -40,24 +27,11 @@
           </div>
 
           <div class="cta-section">
-            <button
-              @click="navigate('/Pilot/guide/versakit/')"
-              class="start-button"
-            >
+            <button @click="navigate('/Pilot/guide/versakit/')" class="start-button">
               开始探索
-              <svg
-                class="start-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill="none"
-                />
+              <svg class="start-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
               </svg>
             </button>
             <div class="version-badge">V 0.3.10</div>
@@ -74,19 +48,9 @@
         </div>
 
         <div class="feature-grid">
-          <div
-            class="feature-card"
-            v-for="item in features"
-            :key="item.name"
-            @click="navigate(item.link)"
-          >
+          <div class="feature-card" v-for="item in features" :key="item.name" @click="navigate(item.link)">
             <div class="feature-icon-wrapper">
-              <svg
-                class="feature-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                v-html="item.svg"
-              ></svg>
+              <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" v-html="item.svg"></svg>
             </div>
             <div class="feature-content">
               <h3 class="feature-title">{{ item.title }}</h3>
@@ -94,19 +58,9 @@
             </div>
             <div class="feature-footer">
               <span>{{ item.btnText }}</span>
-              <svg
-                class="arrow-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill="none"
-                />
+              <svg class="arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
               </svg>
             </div>
           </div>
@@ -152,8 +106,12 @@ const features = [
 ]
 </script>
 
-<style scoped>
+<style>
 /* 基础样式重置 */
+.VPDoc .has-aside {
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -216,6 +174,7 @@ const features = [
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 200px 200px;
   }
@@ -227,12 +186,10 @@ const features = [
   width: 150px;
   height: 1px;
   transform: rotate(-45deg);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .shooting-star-1 {
@@ -254,12 +211,15 @@ const features = [
     transform: translateX(0) translateY(0) rotate(-45deg);
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
+
   70% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(500px) translateY(500px) rotate(-45deg);
     opacity: 0;
@@ -293,10 +253,12 @@ const features = [
 }
 
 @keyframes planet-float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -322,10 +284,12 @@ const features = [
 }
 
 @keyframes rocket-float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
@@ -348,10 +312,12 @@ const features = [
 }
 
 @keyframes title-glow {
+
   0%,
   100% {
     text-shadow: 0 0 10px rgba(0, 119, 182, 0.7);
   }
+
   50% {
     text-shadow: 0 0 20px rgba(0, 119, 182, 1);
   }
@@ -412,10 +378,12 @@ const features = [
 }
 
 @keyframes badge-pulse {
+
   0%,
   100% {
     opacity: 0.7;
   }
+
   50% {
     opacity: 1;
   }
